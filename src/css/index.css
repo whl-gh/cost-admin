@@ -26,4 +26,27 @@ code {
   height: 32px;
   line-height: 32px;
   margin: 16px;
+  text-align: center;
+}
+.logo > img {
+  height: inherit;
+}
+.copyright {
+  margin-bottom: 0;
+}
+.sider {
+  overflow: hidden;
+  height: 100vh;
+}
+.profile {
+  width: 100%;
+  height: 150px;
+  background-color: rebeccapurple;
+}
+.nav {
+  padding-left: 0;
+}
+.trigger {
+  color: #ffffff;
+  font-size: 20px;
 }

@@ -4,15 +4,15 @@ import { LocaleProvider, Layout } from "antd";
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import "antd/dist/antd.css";
 // 导入自定义组件
-import Logo from "../components/Logo";
-import MenuList from "../components/MenuList";
+import Sidebar from "./Sidebar";
+import Trigger from "./Trigger";
+import Copyright from "../components/Copyright";
 
 // 使用语言包
 moment.locale('zh-cn');
 
-let { Header, Content, Footer, Sider }  = Layout;
+let { Header, Content, Footer }  = Layout;
 
 class App extends Component {
   render() {
@@ -20,15 +20,14 @@ class App extends Component {
     <Router>
       <LocaleProvider  locale={zhCN}>
         <Layout className="wrap">
-          <Sider>
-            <Logo />
-            <MenuList />
-          </Sider>
+          <Sidebar />
           <Layout>
-            <Header>1</Header>
+            <Header className="nav">
+              <Trigger />
+            </Header>
             <Content>2</Content>
-            <Footer className="text-center">
-              {`Const Admin ©${new Date().getFullYear()} Created By WHL`}
+            <Footer>
+              <Copyright />
             </Footer>
           </Layout>
         </Layout>
