@@ -12,3 +12,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* 公共样式 */
+.text-center {
+  text-align: center;
+}
+
+/* 自定义样式 */
+.wrap {
+  height: 100vh;
+}
+.logo {
+  height: 32px;
+  line-height: 32px;
+  margin: 16px;
+}
