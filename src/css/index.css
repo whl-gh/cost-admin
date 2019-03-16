@@ -50,3 +50,9 @@ code {
   color: #ffffff;
   font-size: 20px;
 }
+.container {
+  margin: 24px 16px 0;
+}
+.location {
+  margin-bottom: 12px;
+}

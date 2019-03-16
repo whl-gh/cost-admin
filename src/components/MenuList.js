@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Menu, Icon } from 'antd';
+import { Link } from "react-router-dom";
+import router from "../router";
+
 const SubMenu = Menu.SubMenu;
 const Item = Menu.Item;
 
@@ -7,29 +10,61 @@ const Title = ({ type, text})=>(
     <span><Icon type={type} /><span>{text}</span></span>
 );
 
-class MenuList extends Component {
-    render() {
-        return (
-            <Menu theme="dark" mode="inline">
-                <Item key="1">
-                    <Icon type="book" />
-                    <span>通讯录</span>
-                </Item>
-                <SubMenu key="group1" title={<Title type="notification" text="上线通知" />}>
-                    <Item>查看通知</Item>
-                    <Item>发布通知</Item>
-                </SubMenu>
-                <SubMenu key="group2" title={<Title type="customer-service" text="客服专区" />}>
-                    <Item>联系客服</Item>
-                    <Item>查看单据</Item>
-                </SubMenu>
-                <SubMenu key="group3" title={<Title type="message" text="意见反馈" />}>
-                    <Item>我要提Bug</Item>
-                    <Item>我有新需求</Item>
-                </SubMenu>
-            </Menu>
-        );
+let getOpenKeys = (prefix, curr_pathName, router)=>{
+    for(let n=0; n<router.length; n++){
+        if(router[n].module){
+            for(let m=0;m<router[n].routes.length;m++){
+                if(router[n].routes[m].path === curr_pathName){
+                    return prefix+(n+1);
+                };
+            }
+        }else if(curr_pathName===router[n].path){
+            return prefix+(n+1);
+        }
     }
+}
+
+let MenuList = ({ theme })=> {
+    let prefix = "group-";
+    let curr_pathName = window.location.pathname;
+    let defaultSelectedKeys = [curr_pathName];
+    let defaultOpenKeys = [];
+    let openKey = getOpenKeys(prefix, curr_pathName, router);
+    if(openKey){
+        defaultOpenKeys.push(openKey);
+    }
+    return (
+        <Menu theme={theme} mode="inline" defaultSelectedKeys={defaultSelectedKeys} defaultOpenKeys={defaultOpenKeys}>
+            {
+                router.map((module, i)=>{
+                    if(module.module){
+                        return (
+                            <SubMenu key={`${prefix}${i+1}`} title={<Title type={module.icon} text={module.module} />}>
+                                {
+                                    module.routes.map((route, j)=>{
+                                        return (
+                                            <Item key={route.path}>
+                                                <Link to={route.path}>{route.text}</Link>
+                                            </Item>
+                                        );
+                                    })
+                                }
+                            </SubMenu>
+                        );
+                    }else{
+                        return (
+                            <Item key={module.path}>
+                                <Link to={module.path}>
+                                    <Icon type={module.icon} />
+                                    <span>{module.text}</span>
+                                </Link>
+                            </Item>
+                        );
+                    }
+                })
+            }
+        </Menu>
+    );
 }
 
 export default MenuList;

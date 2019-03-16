@@ -3,7 +3,8 @@ import { siderToggle } from "../actions/layout";
 import Sidebar from "../components/Sidebar";
 
 let mapStateToProps = (state)=>({
-    collapsed: state.layout.collapsed
+    collapsed: state.layout.collapsed,
+    theme: state.layout.theme
 });
 
 let mapDispatchToProps = (dispatch)=>({
