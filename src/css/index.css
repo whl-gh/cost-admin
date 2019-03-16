@@ -17,7 +17,14 @@ code {
 .text-center {
   text-align: center;
 }
-
+.clearfix {
+  clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
 /* 自定义样式 */
 .wrap {
   height: 100vh;
@@ -51,8 +58,97 @@ code {
   font-size: 20px;
 }
 .container {
-  margin: 24px 16px 0;
+  margin: 16px 16px 0;
+  /* background-color: #ffffff; */
 }
 .location {
   margin-bottom: 12px;
+}
+.entryLink > div {
+  display: table;
+  table-layout: fixed;
+  /* border-collapse: separate;
+  border-spacing: 1px 0;  水平间距 垂直间距 */
+  width: 100%;
+}
+.entryLink-major,
+.entryLink-minor {
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+}
+.entryLink-item {
+  border-right: 1px solid #f0f2f5; 
+}
+.entryLink-item:last-child {
+  border-right: none;
+}
+.entryLink-major > div,
+.entryLink-minor > div {
+  display: table-cell;
+}
+.entryLink-title {
+  padding: 6px 0;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #1890ff;
+  margin-bottom: 1em;
+  vertical-align: middle;
+}
+.entryLink-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.entryLink-link {
+  margin-bottom: 1rem;
+}
+.entryLink-icon {
+  display: inline-block;
+  border: 1px solid transparent;
+  
+  padding: 1px;
+}
+.entryLink-icon:hover {
+  box-shadow: -1px -1px 1px #dddddd, 2px 2px 3px #666666, 2px 3px 6px #888888;
+}
+.entryLink-icon > img {
+  width: 2rem;
+}
+.entryLink-title, 
+.entryLink-link,
+.entryLink-text {
+  text-align: center;
+}
+.entryLink-text {
+  margin-bottom: 0;
+  padding: 6px 0;
+}
+.entryLink-text a {
+  color: #333333;
+  font-size: 0.857rem;
+}
+.entryLink-text a:hover,
+.entryLink-minor-item > a:hover {
+  text-decoration: underline;
+  color: #1890ff;
+}
+.entryLink-minor > div:first-child {
+  width: 2rem;
+  background-color: #1890ff;
+}
+.entryLink-minor .entryLink-title {
+  margin-bottom: 0;
+}
+.entryLink-minor-list {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.entryLink-minor-item {
+  display: table-cell;
+  padding: .5rem 1rem;
+}
+.entryLink-minor-item > a {
+  color: #333333;
+  font-size: 1rem;;
 }

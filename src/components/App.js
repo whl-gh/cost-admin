@@ -29,10 +29,10 @@ let App = (props)=> (
           <Content className="container">
             <Path />
             <RouterMap />
+            <Footer>
+              <Copyright />
+            </Footer>
           </Content>
-          <Footer>
-            <Copyright />
-          </Footer>
         </Layout>
       </Layout>
     </LocaleProvider>
