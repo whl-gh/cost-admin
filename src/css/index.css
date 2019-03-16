@@ -109,7 +109,7 @@ code {
   padding: 1px;
 }
 .entryLink-icon:hover {
-  box-shadow: -1px -1px 1px #dddddd, 2px 2px 3px #666666, 2px 3px 6px #888888;
+  box-shadow: -1px -1px 1px #dddddd, 2px 2px 3px #888888, 2px 3px 6px #aaaaaa;
 }
 .entryLink-icon > img {
   width: 2rem;
@@ -125,7 +125,7 @@ code {
 }
 .entryLink-text a {
   color: #333333;
-  font-size: 0.857rem;
+  font-size: 0.75rem;
 }
 .entryLink-text a:hover,
 .entryLink-minor-item > a:hover {
