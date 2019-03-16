@@ -34,16 +34,15 @@ let getPath = ()=>{
 
 let Path = (props)=>{
     let path_list = getPath();
-    console.log(path_list);
     return (
     <Breadcrumb className="location">
         {
             path_list.map((path, i)=>{
                 if(i>0){
-                    return <Item>{path.text}</Item>
+                    return <Item key={i.toString()}>{path.text}</Item>
                 }
                 return (
-                    <Item>
+                    <Item key={i.toString()}>
                         <Icon type={path.icon} />
                         <span>{path.text}</span>
                     </Item>
