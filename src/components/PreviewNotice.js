@@ -18,7 +18,7 @@ class PreviewNotice extends Component {
         };
     }
     
-    handleReset = ()=>{
+    handleReset = (e)=>{
         this.setState({
             expand: false,
             noticeType: "0",
