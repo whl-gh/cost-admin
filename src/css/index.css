@@ -17,6 +17,12 @@ code {
 .text-center {
   text-align: center;
 }
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 .clearfix {
   clear: both;
 }
@@ -24,6 +30,12 @@ code {
 .clearfix:after {
   content: " ";
   display: table;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }
 /* 自定义样式 */
 .wrap {
@@ -59,16 +71,14 @@ code {
 }
 .container {
   margin: 16px 16px 0;
-  /* background-color: #ffffff; */
 }
 .location {
   margin-bottom: 12px;
 }
+/* 入口链接 */
 .entryLink > div {
   display: table;
   table-layout: fixed;
-  /* border-collapse: separate;
-  border-spacing: 1px 0;  水平间距 垂直间距 */
   width: 100%;
 }
 .entryLink-major,
@@ -151,4 +161,28 @@ code {
 .entryLink-minor-item > a {
   color: #333333;
   font-size: 1rem;;
+}
+/* 查看通知 */
+.previewNotice {
+  background-color: #ffffff;
+  padding: 16px;
+}
+.pv-form-item {
+  width: 100%;
+}
+.pv-form-item > .ant-form-item-label {
+  width: 80px;
+}
+.pv-form-item > .ant-form-item-control-wrapper {
+  width: calc(100% - 80px);
+}
+.pv-aq {
+  cursor: pointer;
+  font-size: .8rem;
+}
+.pv-aq-wrap{
+  display: none;
+}
+.pv-form-aq .pv-aq-wrap {
+  display: block;
 }
