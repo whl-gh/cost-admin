@@ -27,7 +27,7 @@ let PublishNotice = (props)=>{
                         <td className="publishNotice-title">所属部门</td>
                         <td>
                             <TreeSelect
-                                style={{ width: 300 }}
+                                style={{ width: "100%" }}
                                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
                                 treeData={treeDataOrg}
                                 placeholder="请选择部门"
