@@ -1,5 +1,5 @@
 import React from "react";
-import { Upload, Icon, Button } from "antd";
+import { Upload } from "antd";
 
 let NoticeDetails = ({item})=>{
     let fileList= [
@@ -7,13 +7,13 @@ let NoticeDetails = ({item})=>{
             uid: '-1',
             name: 'xxx.png',
             status: 'done',
-            url: require('../img/mv.jpg'),//https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png
+            url: require('../img/mv.jpg'),
             thumbUrl: require('../img/mv.jpg'),
         }
     ];
     let config = {
         disabled: true,
-        action: '//jsonplaceholder.typicode.com/posts/',
+        action: '',//上传地址
         listType: 'picture',
         defaultFileList: [...fileList],
         className: 'upload-list-inline',
