@@ -38,11 +38,11 @@ let EntryLink = (props)=>(
                 {
                     minor.map((items, i)=>{
                         return (
-                            <ul key={i.toString()} className="entryLink-list entryLink-minor-list">
+                            <ul key={`${i}`} className="entryLink-list entryLink-minor-list">
                                 {
                                     items.map((item, j)=>{
                                         return (
-                                            <li key={j.toString} className="entryLink-minor-item">
+                                            <li key={`${i}-${j}`} className="entryLink-minor-item">
                                                 <a href={item.url} title={item.name} target="_blank" rel="noopener noreferrer">{item.name}</a>
                                             </li>
                                         );

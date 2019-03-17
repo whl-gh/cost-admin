@@ -179,6 +179,7 @@ code {
 .pv-aq {
   cursor: pointer;
   font-size: .8rem;
+  user-select:none;
 }
 .pv-aq-wrap{
   display: none;
