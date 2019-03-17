@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import { Form, Row, Col, Input, Select, Button, Icon } from "antd";
-
+import { Form, Row, Col, Input, Select, Button, Icon, Modal } from "antd";
+import NoticeTable from "./NoticeTable";
+import noticeDate from "../source/noticeDate";
+import NoticeDetails from "./NoticeDetails";
 const Option = Select.Option;
 
 class PreviewNotice extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            visible: false,
             expand: false,
             noticeType: "0",//默认完全是
             title: "",
@@ -14,7 +17,8 @@ class PreviewNotice extends Component {
             flow: "0",
             requirement: "0",
             developer: "0",
-            tester: "0"
+            tester: "0",
+            curr_row: null
         };
     }
     
@@ -62,6 +66,19 @@ class PreviewNotice extends Component {
     handleSearch = (e)=>{
         e.preventDefault();
         console.log(this.state);
+    }
+    viewDetails = (text,item)=>{
+        console.log(text);
+        console.log(item);
+        this.setState({
+            visible: true,
+            curr_row: item
+        })
+    }
+    handleCancel = (e)=>{
+        this.setState({
+            visible: false
+        });
     }
     render(){
         const { getFieldDecorator } = this.props.form;
@@ -233,6 +250,16 @@ class PreviewNotice extends Component {
                     </div>
                 </Form>
                 {/* 数据展示 */}
+                <NoticeTable data={noticeDate} viewDetails={this.viewDetails} />
+                {/* 数据详情展示 */}
+                <Modal
+                    title={this.state.curr_row ? this.state.curr_row.noticeType : "查看通知"}
+                    footer={null}
+                    width={1040}
+                    visible={this.state.visible}
+                    onCancel={this.handleCancel}>
+                    <NoticeDetails item={this.state.curr_row||{}} />
+                </Modal>
             </div>
         );
     }

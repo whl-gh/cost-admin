@@ -187,3 +187,47 @@ code {
 .pv-form-aq .pv-aq-wrap {
   display: block;
 }
+.href {
+  color: #1890ff;
+  cursor: pointer;
+}
+.href:hover {
+  text-decoration: underline;
+}
+.noticeDetails-tbl {
+  width: 100%;
+}
+.noticeDetails-tbl > caption{
+  caption-side: top;
+  text-align: center;
+}
+.noticeDetails-tbl > caption > span {
+  margin-left: 5rem;
+}
+.noticeDetails-tbl > caption > span:first-child{
+  margin-left: 0;
+}
+.noticeDetails-tbl,
+.noticeDetails-tbl td {
+  border: 1px solid #dddddd;
+}
+.noticeDetails-tbl td {
+  padding: .5rem; 
+}
+.noticeDetails-title {
+  width: 6rem;
+  text-align: right;
+  font-weight: 700;
+  background-color: #eeeeee;
+}
+.upload-list-inline .ant-upload-list-item {
+  float: left;
+  width: 200px;
+  margin-right: 8px;
+}
+.upload-list-inline .ant-upload-animate-enter {
+  animation-name: uploadAnimateInlineIn;
+}
+.upload-list-inline .ant-upload-animate-leave {
+  animation-name: uploadAnimateInlineOut;
+}
