@@ -18,7 +18,7 @@ code {
   text-align: center;
 }
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 .text-right {
   text-align: right;
@@ -166,7 +166,8 @@ code {
 .previewNotice,
 .publishNotice,
 .commitBug,
-.commitSuggest {
+.commitSuggest,
+.performance {
   background-color: #ffffff;
   padding: 16px;
 }
@@ -200,14 +201,16 @@ code {
 .noticeDetails-tbl,
 .publishNotice-tbl,
 .commitBug-tbl,
-.commitSuggest-tbl {
+.commitSuggest-tbl,
+.performance-tbl {
   width: 100%;
   table-layout: fixed;
 }
 .noticeDetails-tbl > caption,
 .publishNotice-tbl > caption,
 .commitBug-tbl > caption,
-.commitSuggest-tbl > caption {
+.commitSuggest-tbl > caption,
+.performance-tbl > caption {
   caption-side: top;
   text-align: center;
 }
@@ -231,7 +234,8 @@ code {
 .commitBug-tbl,
 .commitBug-tbl td,
 .commitSuggest-tbl,
-.commitSuggest-tbl td {
+.commitSuggest-tbl td,
+.performance-tbl td {
   border: 1px solid #dddddd;
 }
 .noticeDetails-tbl td,
@@ -240,14 +244,22 @@ code {
 .commitSuggest-tbl td {
   padding: .5rem; 
 }
+.performance-tbl td {
+  padding: .25rem;
+}
 .noticeDetails-title,
 .publishNotice-title,
 .commitBug-title,
-.commitSuggest-title {
+.commitSuggest-title,
+.performance-title {
   width: 6rem;
   text-align: right;
   font-weight: 700;
   background-color: #eeeeee;
+}
+.performance-title {
+  width: 10rem;
+  font-weight: 500;
 }
 .upload-list-inline .ant-upload-list-item {
   float: left;
